@@ -251,7 +251,7 @@ function iniciarJuego() {
     
     botonReiniciar.addEventListener('click', reiniciarJuego)
 
-    unirseAlJuego()
+    //unirseAlJuego()
 }
 
 function unirseAlJuego(){
@@ -310,11 +310,11 @@ function seleccionarMascotaJugador() {
 
     extraerAtaques(mascotaJugador)
     sectionverMapa.style.display = 'flex'
-    intervalo = setInterval(pintarCanvas, 50)
+    //intervalo = setInterval(pintarCanvas, 50)
     iniciarMapa()
 }
 
-function seleccionarMokepon(mascotaJugador){
+/*function seleccionarMokepon(mascotaJugador){
     fetch(`http://192.168.0.115:8080/mokepon/${jugadorId}`, {
         method: "post",
         headers: {
@@ -324,7 +324,7 @@ function seleccionarMokepon(mascotaJugador){
             mokepon: mascotaJugador
         })
      })
-}
+}*/
 
 function extraerAtaques(mascotaJugador) {
     let ataques
@@ -401,7 +401,7 @@ function secuenciaAtaque() {
     
 
 }
-
+/*
 function enviarAtaques(){
     fetch(`http://192.168.0.115:8080/mokepon/${jugadorId}/ataques`, {
         method: "post",
@@ -431,7 +431,7 @@ function obtenerAtaques(){
         }
     })
 
-}
+}*/
 
 
 function seleccionarMascotaEnemigo(enemigo) {
@@ -555,7 +555,7 @@ function aleatorio(min, max) {
 }
 
 function pintarCanvas(){
-
+/*
     //console.log(mascotaJugadorObjeto)
     mascotaJugadorObjeto.x = mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX
     mascotaJugadorObjeto.y = mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY 
@@ -567,22 +567,23 @@ function pintarCanvas(){
         mapa.width,
         mapa.height
     )
-  /*  lienzo.drawImage(
+    lienzo.drawImage(
         mascotaJugadorObjeto.mapaFoto,
         mascotaJugadorObjeto.x,
         mascotaJugadorObjeto.y,
         mascotaJugadorObjeto.ancho,
         mascotaJugadorObjeto.alto
-    )*/
+    )
     mascotaJugadorObjeto.pintarMokepon()
-
-    enviarPosicion(mascotaJugadorObjeto.x, mascotaJugadorObjeto.y)
+    */
+    //enviarPosicion(mascotaJugadorObjeto.x, mascotaJugadorObjeto.y)
 
     mokeponesEnemigos.forEach(function (mokepon){
         mokepon.pintarMokepon()
         revisarColision(mokepon)
     })
-   hipodogeEnemigo.pintarMokepon()
+    /*
+    hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
     langostelvisEnemigo.pintarMokepon()
@@ -598,6 +599,7 @@ function pintarCanvas(){
         revisarColision(pydosEnemigo)
 
     }
+        */
 }
 
 function enviarPosicion(x,y){
@@ -694,6 +696,8 @@ switch(event.key){
 function iniciarMapa() {
 
     mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
+
+    mokeponesEnemigos = mokepones.filter((mokepon) => mokepon.nombre !== mascotaJugador)
     console.log(mascotaJugadorObjeto, mascotaJugador);
     intervalo = setInterval(pintarCanvas, 50)
     
