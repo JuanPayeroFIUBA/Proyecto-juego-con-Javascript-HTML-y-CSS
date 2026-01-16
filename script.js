@@ -310,7 +310,7 @@ function seleccionarMascotaJugador() {
 
     extraerAtaques(mascotaJugador)
     sectionverMapa.style.display = 'flex'
-    //intervalo = setInterval(pintarCanvas, 50)
+    intervalo = setInterval(pintarCanvas, 50)
     iniciarMapa()
 }
 
@@ -391,7 +391,7 @@ function secuenciaAtaque() {
                 boton.style.background = '#112f58'
                 boton.disabled = true  
             }
-            //ataqueAleatorioEnemigo()
+            ataqueAleatorioEnemigo()
             if(ataqueJugador.length === 5){
                 enviarAtaques()
             }
@@ -582,13 +582,13 @@ function pintarCanvas(){
         mokepon.pintarMokepon()
         revisarColision(mokepon)
     })
-   /*hipodogeEnemigo.pintarMokepon()
+   hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
     langostelvisEnemigo.pintarMokepon()
     pydosEnemigo.pintarMokepon()
-    tucapalmaEnemigo.pintarMokepon()*/
-/*
+    tucapalmaEnemigo.pintarMokepon()
+
     if(mascotaJugadorObjeto.velocidadX !== 0 || mascotaJugadorObjeto.velocidadY !== 0){
         revisarColision(hipodogeEnemigo)
         revisarColision(ratigueyaEnemigo)
@@ -597,7 +597,7 @@ function pintarCanvas(){
         revisarColision(tucapalmaEnemigo)
         revisarColision(pydosEnemigo)
 
-    }*/
+    }
 }
 
 function enviarPosicion(x,y){
