@@ -76,8 +76,13 @@ class Mokepon {
         this.ataques = []
         this.ancho = 40
         this.alto = 40
-        this.x = posicion.x
-        this.y = posicion.y
+         if (posicion) {
+            this.x = posicion.x
+            this.y = posicion.y
+        } else {
+            this.x = aleatorio(0, mapa.width - this.ancho)
+            this.y = aleatorio(0, mapa.height - this.alto)
+        }
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa
         this.velocidadX = 0
