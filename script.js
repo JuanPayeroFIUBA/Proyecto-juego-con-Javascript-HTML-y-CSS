@@ -68,7 +68,7 @@ mapa.height = alturaQueBuscamos
 
 
 class Mokepon {
-    constructor(nombre, foto, vida, fotoMapa, id = null, x=0, y=0) {
+    constructor(nombre, foto, vida, fotoMapa, id = null, posicion = null) {
         this.id = id
         this.nombre = nombre
         this.foto = foto
