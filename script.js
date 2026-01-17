@@ -109,7 +109,7 @@ let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_at
 let langostelvis = new Mokepon('Langostelvis', './assets/mokepons_mokepon_langostelvis_attack.png', 5, './assets/langostelvis.png', {x:70, y: 210},null)
 let pydos = new Mokepon('Pydos', './assets/mokepons_mokepon_pydos_attack.png', 5, './assets/pydos.png',{x: 45, y: 45},null)
 
-let tucapalma = new Mokepon('Tucapalma', './assets/mokepons_mokepon_tucapalma_attack.png', 5, './assets/tucapalma.png', {x: 220, y: 25},null)
+let tucapalma = new Mokepon('Tucapalma', './assets/mokepons_mokepon_tucapalma_attack.png', 5, './assets/tucapalma.png', {x: 220, y: 15},null)
 
 
 const HIPODOGE_ATAQUES = [
@@ -411,6 +411,19 @@ function aleatorio(min, max) {
 function pintarCanvas(){
     mascotaJugadorObjeto.x += mascotaJugadorObjeto.velocidadX
     mascotaJugadorObjeto.y += mascotaJugadorObjeto.velocidadY
+
+    if (mascotaJugadorObjeto.x < 0) {
+        mascotaJugadorObjeto.x = 0
+    }
+    if (mascotaJugadorObjeto.y < 0) {
+        mascotaJugadorObjeto.y = 0
+    }
+    if (mascotaJugadorObjeto.x > mapa.width - mascotaJugadorObjeto.ancho) {
+        mascotaJugadorObjeto.x = mapa.width - mascotaJugadorObjeto.ancho
+    }
+    if (mascotaJugadorObjeto.y > mapa.height - mascotaJugadorObjeto.alto) {
+        mascotaJugadorObjeto.y = mapa.height - mascotaJugadorObjeto.alto
+    }
 
     lienzo.clearRect(0, 0, mapa.width, mapa.height)
 
