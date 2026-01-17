@@ -76,10 +76,13 @@ class Mokepon {
         this.ataques = []
         this.ancho = 40
         this.alto = 40
-        //this.x = aleatorio(0 , mapa.width - this.ancho)
-        //this.y = aleatorio(0 , mapa.height - this.alto)
-        this.x = x
-        this.y = y
+         if (posicion) {
+            this.x = posicion.x
+            this.y = posicion.y
+        } else {
+            this.x = aleatorio(0, mapa.width - this.ancho)
+            this.y = aleatorio(0, mapa.height - this.alto)
+        }
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa
         this.velocidadX = 0
@@ -97,17 +100,17 @@ class Mokepon {
     }
 }
 
-let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5, './assets/hipodoge.png', mapa.width/5,mapa.height)
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5, './assets/hipodoge.png', {x: 50, y: 100})
      
-let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.png', mapa.width/2,mapa.height/2)
+let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.png',{x: 100, y: 100})
 
-let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5, './assets/ratigueya.png', 2*mapa.width/3,2*mapa.height/3)
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5, './assets/ratigueya.png', {x: 150, y: 150})
 
-let langostelvis = new Mokepon('Langostelvis', './assets/mokepons_mokepon_langostelvis_attack.png', 5, './assets/langostelvis.png', mapa.width/5,4*mapa.height/5)
+let langostelvis = new Mokepon('Langostelvis', './assets/mokepons_mokepon_langostelvis_attack.png', 5, './assets/langostelvis.png', {x:200, y: 300})
 
-let pydos = new Mokepon('Pydos', './assets/mokepons_mokepon_pydos_attack.png', 5, './assets/pydos.png', mapa.width/5,mapa.height/5)
+let pydos = new Mokepon('Pydos', './assets/mokepons_mokepon_pydos_attack.png', 5, './assets/pydos.png',{x: 50, y: 250})
 
-let tucapalma = new Mokepon('Tucapalma', './assets/mokepons_mokepon_tucapalma_attack.png', 5, './assets/tucapalma.png', 2*mapa.width/3,mapa.height/10)
+let tucapalma = new Mokepon('Tucapalma', './assets/mokepons_mokepon_tucapalma_attack.png', 5, './assets/tucapalma.png', {x: 100, y: 150})
 
 
 const HIPODOGE_ATAQUES = [
